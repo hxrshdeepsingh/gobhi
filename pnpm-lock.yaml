@@ -209,11 +209,11 @@ importers:
 
   apps/project:
     dependencies:
-      dream:
+      gobhi:
         specifier: workspace:*
-        version: link:../../packages/dream
+        version: link:../../packages/gobhi
 
-  packages/dream:
+  packages/gobhi:
     dependencies:
       '@preact/signals-core':
         specifier: ^1.14.4
