@@ -1,0 +1,398 @@
+<server>
+    const name = "Harshdeep"
+    const message = "Alpine Playground"
+
+    return { name, message }
+</server>
+
+<main>
+
+    <h1>{message}</h1>
+    <p>Hello {name}</p>
+
+    <!-- 1. Toggle -->
+    <section>
+        <h2>1. Toggle</h2>
+
+        <div x-data="{ open: false }">
+
+            <button @click="open = !open">
+                Toggle Content
+            </button>
+
+            <div x-show="open">
+                This content can be shown and hidden.
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 2. Counter -->
+    <section>
+        <h2>2. Counter</h2>
+
+        <div x-data="{ count: 0 }">
+
+            <button @click="count--">-</button>
+
+            <span x-text="count"></span>
+
+            <button @click="count++">+</button>
+
+        </div>
+    </section>
+
+
+    <!-- 3. Input / Two-way Binding -->
+    <section>
+        <h2>3. Input Binding</h2>
+
+        <div x-data="{ name: '' }">
+
+            <input
+                type="text"
+                x-model="name"
+                placeholder="Enter your name"
+            >
+
+            <p>
+                Hello <span x-text="name"></span>
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- 4. Conditional Rendering -->
+    <section>
+        <h2>4. Conditional Rendering</h2>
+
+        <div x-data="{ loggedIn: false }">
+
+            <button @click="loggedIn = !loggedIn">
+                Login / Logout
+            </button>
+
+            <template x-if="loggedIn">
+                <p>Welcome! You are logged in.</p>
+            </template>
+
+            <template x-if="!loggedIn">
+                <p>Please log in.</p>
+            </template>
+
+        </div>
+    </section>
+
+
+    <!-- 5. Dropdown -->
+    <section>
+        <h2>5. Dropdown</h2>
+
+        <div x-data="{ open: false }">
+
+            <button @click="open = !open">
+                Menu
+            </button>
+
+            <div x-show="open">
+                <button>Profile</button>
+                <button>Settings</button>
+                <button>Logout</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 6. Tabs -->
+    <section>
+        <h2>6. Tabs</h2>
+
+        <div x-data="{ tab: 'home' }">
+
+            <button @click="tab = 'home'">
+                Home
+            </button>
+
+            <button @click="tab = 'profile'">
+                Profile
+            </button>
+
+            <button @click="tab = 'settings'">
+                Settings
+            </button>
+
+
+            <div x-show="tab === 'home'">
+                <h3>Home</h3>
+                <p>Home content</p>
+            </div>
+
+            <div x-show="tab === 'profile'">
+                <h3>Profile</h3>
+                <p>Profile content</p>
+            </div>
+
+            <div x-show="tab === 'settings'">
+                <h3>Settings</h3>
+                <p>Settings content</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 7. List Rendering -->
+    <section>
+        <h2>7. List Rendering</h2>
+
+        <div x-data="{
+            users: [
+                'Harshdeep',
+                'Rahul',
+                'Aman'
+            ]
+        }">
+
+            <ul>
+
+                <template x-for="user in users">
+
+                    <li x-text="user"></li>
+
+                </template>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- 8. Add Items -->
+    <section>
+        <h2>8. Add Items</h2>
+
+        <div x-data="{
+            items: [],
+            newItem: ''
+        }">
+
+            <input
+                x-model="newItem"
+                placeholder="New item"
+            >
+
+            <button
+                @click="
+                    if (newItem.trim()) {
+                        items.push(newItem);
+                        newItem = '';
+                    }
+                "
+            >
+                Add
+            </button>
+
+
+            <ul>
+
+                <template x-for="item in items">
+
+                    <li x-text="item"></li>
+
+                </template>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- 9. Search / Filter -->
+    <section>
+        <h2>9. Search</h2>
+
+        <div x-data="{
+            search: '',
+            users: [
+                'Harshdeep',
+                'Rahul',
+                'Aman',
+                'Priya',
+                'Neha'
+            ]
+        }">
+
+            <input
+                x-model="search"
+                placeholder="Search users"
+            >
+
+            <ul>
+
+                <template
+                    x-for="user in users.filter(
+                        user => user.toLowerCase().includes(search.toLowerCase())
+                    )"
+                >
+
+                    <li x-text="user"></li>
+
+                </template>
+
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- 10. Modal -->
+    <section>
+        <h2>10. Modal</h2>
+
+        <div x-data="{ open: false }">
+
+            <button @click="open = true">
+                Open Modal
+            </button>
+
+
+            <div
+                x-show="open"
+                @click.self="open = false"
+            >
+
+                <div>
+
+                    <h3>My Modal</h3>
+
+                    <p>
+                        This is a modal controlled completely by Alpine.
+                    </p>
+
+                    <button @click="open = false">
+                        Close
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 11. Form -->
+    <section>
+        <h2>11. Form</h2>
+
+        <div x-data="{
+            email: '',
+            submitted: false
+        }">
+
+            <form
+                @submit.prevent="submitted = true"
+            >
+
+                <input
+                    type="email"
+                    x-model="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+
+            <div x-show="submitted">
+
+                <p>
+                    Form submitted for:
+                    <span x-text="email"></span>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 12. Class Binding -->
+    <section>
+        <h2>12. Dynamic Classes</h2>
+
+        <div x-data="{ active: false }">
+
+            <button
+                @click="active = !active"
+                :class="{ 'active': active }"
+            >
+                Toggle Active
+            </button>
+
+            <p x-show="active">
+                Button is active.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- 13. Disabled State -->
+    <section>
+        <h2>13. Dynamic Attributes</h2>
+
+        <div x-data="{ disabled: true }">
+
+            <button
+                @click="disabled = !disabled"
+            >
+                Toggle Disabled
+            </button>
+
+            <button
+                :disabled="disabled"
+            >
+                Submit
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- 14. Loading State -->
+    <section>
+        <h2>14. Loading State</h2>
+
+        <div x-data="{ loading: false }">
+
+            <button
+                @click="
+                    loading = true;
+                    setTimeout(() => loading = false, 2000)
+                "
+                :disabled="loading"
+            >
+
+                <span x-show="!loading">
+                    Load
+                </span>
+
+                <span x-show="loading">
+                    Loading...
+                </span>
+
+            </button>
+
+        </div>
+    </section>
+
+
+</main>

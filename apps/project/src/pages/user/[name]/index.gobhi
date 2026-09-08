@@ -1,0 +1,7 @@
+<server>
+const { name } = params;
+return {name}
+</server>
+
+<p>name is: {name}</p>
+<a href="/">Home</a>
