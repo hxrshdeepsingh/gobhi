@@ -1,6 +1,10 @@
 {
     "$schema": "https://mintlify.com/schema.json",
     "name": "My Documentation",
+<<<<<<< HEAD
+=======
+    "theme": "mint",
+>>>>>>> 8d81ed4 (updated)
     "colors": {
         "primary": "#0F766E",
         "light": "#14B8A6",
