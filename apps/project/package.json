@@ -1,6 +1,9 @@
 {
   "name": "project",
+  "scripts": {
+    "dev": "gobhi dev"
+  },
   "dependencies": {
-    "gobhi": "workspace:*"
+    "gobhi": "file:..\\..\\packages\\gobhi\\gobhi-0.1.0-beta.2.tgz"
   }
 }

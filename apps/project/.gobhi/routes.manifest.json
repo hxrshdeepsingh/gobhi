@@ -1,0 +1,26 @@
+[
+  {
+    "name": "/",
+    "path": "./src/pages/index.gobhi",
+    "dynamic": false,
+    "params": []
+  },
+  {
+    "name": "/user/:name",
+    "path": "./src/pages/user/[name]/index.gobhi",
+    "dynamic": false,
+    "params": []
+  },
+  {
+    "name": "/alpine",
+    "path": "./src/pages/alpine/index.gobhi",
+    "dynamic": false,
+    "params": []
+  },
+  {
+    "name": "/404",
+    "path": "./src/pages/404/index.gobhi",
+    "dynamic": false,
+    "params": []
+  }
+]
