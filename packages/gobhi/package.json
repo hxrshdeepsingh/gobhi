@@ -3,7 +3,7 @@
   "version": "0.1.0-beta.2",
   "type": "module",
   "bin": {
-    "gobhi": "./dist/cli/index.js"
+    "gobhi": "dist/cli/index.js"
   },
   "scripts": {
     "dev": "bun --watch ./src/server.js",
