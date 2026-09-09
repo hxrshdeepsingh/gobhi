@@ -1,19 +1,17 @@
 {
-    "$schema": "https://mintlify.com/schema.json",
-    "name": "My Documentation",
+    "$schema": "https://mintlify.com/docs.json",
     "theme": "mint",
+    "name": "Your Project",
     "colors": {
-        "primary": "#0F766E",
-        "light": "#14B8A6",
-        "dark": "#115E59"
+        "primary": "#4CAF50"
     },
+    "logo": "/logo/logo.png",
     "navigation": {
         "groups": [
             {
                 "group": "Documentation",
                 "pages": [
-                    "index",
-                    "getting-started"
+                    "index"
                 ]
             }
         ]
