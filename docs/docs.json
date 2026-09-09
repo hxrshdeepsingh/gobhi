@@ -7,13 +7,15 @@
         "light": "#14B8A6",
         "dark": "#115E59"
     },
-    "navigation": [
-        {
-            "group": "Documentation",
-            "pages": [
-                "index",
-                "getting-started"
-            ]
-        }
-    ]
+    "navigation": {
+        "groups": [
+            {
+                "group": "Documentation",
+                "pages": [
+                    "index",
+                    "getting-started"
+                ]
+            }
+        ]
+    }
 }
