@@ -6,12 +6,15 @@
         "primary": "#4CAF50"
     },
     "logo": "/logo/icon.png",
+    "favicon": "/logo/favicon.png",
     "navigation": {
         "groups": [
             {
                 "group": "Documentation",
                 "pages": [
-                    "index"
+                    "index",
+                    "getting-started.mdx",
+                    "quickstart.mdx"
                 ]
             }
         ]
