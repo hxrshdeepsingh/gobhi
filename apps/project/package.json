@@ -2,8 +2,5 @@
   "name": "project",
   "scripts": {
     "dev": "burfi dev"
-  },
-  "dependencies": {
-    "burfi": "file:..\\..\\packages\\burfi\\burfi-0.1.0-beta.1.tgz"
   }
 }
