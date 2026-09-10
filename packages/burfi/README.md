@@ -55,17 +55,17 @@ pnpm pack
 This creates:
 
 ```text
-gobhi-<version>.tgz
+burfi-<version>.tgz
 ```
 
 Install it in the test project:
 
 ```bash
 cd ../../apps/project
-pnpm add ../../packages/gobhi/gobhi-<version>.tgz
+pnpm add ../../packages/burfi/burfi-<version>.tgz
 ```
 
-Test Gobhi:
+Test Burfi:
 
 ```bash
 pnpm run dev
@@ -75,10 +75,10 @@ Make sure everything works before publishing.
 
 ## 4. Publish Beta
 
-Go back to the Gobhi package:
+Go back to the Burfi package:
 
 ```bash
-cd ../../packages/gobhi
+cd ../../packages/burfi
 ```
 
 Publish the beta:
@@ -90,12 +90,12 @@ pnpm publish --tag beta
 Users can install the latest beta with:
 
 ```bash
-pnpm add gobhi@beta
+pnpm add burfi@beta
 ```
 
 ## 5. Publish Stable
 
-When Gobhi is ready for a stable release:
+When Burfi is ready for a stable release:
 
 ```bash
 pnpm publish
@@ -104,7 +104,7 @@ pnpm publish
 Users can install the stable version with:
 
 ```bash
-pnpm add gobhi
+pnpm add burfi
 ```
 
 ## Quick Release

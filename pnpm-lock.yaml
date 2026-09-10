@@ -209,11 +209,11 @@ importers:
 
   apps/project:
     dependencies:
-      gobhi:
-        specifier: file:..\..\packages\gobhi\gobhi-0.1.0-beta.2.tgz
-        version: file:packages/gobhi/gobhi-0.1.0-beta.2.tgz
+      burfi:
+        specifier: file:..\..\packages\burfi\burfi-0.1.0-beta.1.tgz
+        version: link:../../packages/burfi
 
-  packages/gobhi:
+  packages/burfi:
     dependencies:
       '@preact/signals-core':
         specifier: ^1.14.4
@@ -378,11 +378,6 @@ packages:
   bun-types@1.4.0:
     resolution: {integrity: sha512-iIKw23BspnQQYd3prITOBxeUsxBHnwzX6YJfGMuNOZzeNcMmVqzIIVGRm1l69ogaPQmb4wB6BN8mA5bE9YuC5Q==}
 
-  gobhi@file:packages/gobhi/gobhi-0.1.0-beta.2.tgz:
-    resolution: {integrity: sha512-KajsUCsmKRzsFk3oAlKgrhTVt7F81tfcB0eh+nRE6Zf8xakX3+SpscBJHa/TzhacHA76rDxeZragkWqFNKRjZA==, tarball: file:packages/gobhi/gobhi-0.1.0-beta.2.tgz}
-    version: 0.1.0-beta.2
-    hasBin: true
-
   htmx.org@2.0.10:
     resolution: {integrity: sha512-kdeJe7ZVwaS6QMz/ebBIVtZdpwen6L0OQ5GOhPV9MKBb196TCZeZu4yA7ZIQsaLKv7EpXz+So7KSXNuHXhj7Cw==}
 
@@ -482,13 +477,6 @@ snapshots:
   bun-types@1.4.0:
     dependencies:
       '@types/node': 26.4.0
-
-  gobhi@file:packages/gobhi/gobhi-0.1.0-beta.2.tgz:
-    dependencies:
-      '@preact/signals-core': 1.14.4
-      alpinejs: 3.17.0
-      htmx.org: 2.0.10
-      path-to-regexp: 8.4.2
 
   htmx.org@2.0.10: {}
 

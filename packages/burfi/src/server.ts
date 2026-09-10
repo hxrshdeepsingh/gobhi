@@ -1,14 +1,14 @@
-import { renderGobhiFile } from "./render/render"
+import { renderBurfiFile } from "./render/render"
 import { layoutWrapper } from "./template/layout"
 import { getRouteFile, generateRoutes, loadRoutes } from "./routing/routing";
 
 
 // -----------------------------------------
 
-// routes project * gobhi
+// routes project * burfi
 const projectRoot = process.cwd();
-const gobhiRoot = `${import.meta.dir}/..`;
-const config = await import(`${projectRoot}/gobhi.config.ts`);
+const burfiRoot = `${import.meta.dir}/..`;
+const config = await import(`${projectRoot}/burfi.config.ts`);
 
 // -----------------------------------------
 
@@ -23,7 +23,7 @@ const fetch = async (request: any) => {
 
     if (url.pathname === "/htmx.js") {
         return new Response(
-            Bun.file(`${gobhiRoot}/node_modules/htmx.org/dist/htmx.min.js`),
+            Bun.file(`${burfiRoot}/node_modules/htmx.org/dist/htmx.min.js`),
             {
                 headers: {
                     "Content-Type": "application/javascript",
@@ -33,7 +33,7 @@ const fetch = async (request: any) => {
     }
     if (url.pathname === "/alpine.js") {
         return new Response(
-            Bun.file(`${gobhiRoot}/node_modules/alpinejs/dist/cdn.min.js`),
+            Bun.file(`${burfiRoot}/node_modules/alpinejs/dist/cdn.min.js`),
             {
                 headers: {
                     "Content-Type": "application/javascript",
@@ -51,7 +51,7 @@ const fetch = async (request: any) => {
     const { path, params } = await getRouteFile(url.pathname);
     const file = Bun.file(path);
 
-    const html = await renderGobhiFile(path, request, params);
+    const html = await renderBurfiFile(path, request, params);
     const finalHtml = await layoutWrapper(html);
 
     if (await file.exists()) {
@@ -68,4 +68,4 @@ const fetch = async (request: any) => {
 }
 
 config.default.runtime.listen(config.default.port, fetch);
-console.log(`Gobhi running at http://localhost:${config.default.port}`);
+console.log(`Burfi running at http://localhost:${config.default.port}`);

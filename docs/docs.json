@@ -1,12 +1,12 @@
 {
     "$schema": "https://mintlify.com/docs.json",
     "theme": "mint",
-    "name": "Gobhi",
+    "name": "Burfi",
     "colors": {
         "primary": "#4CAF50"
     },
-    "logo": "/logo/icon.png",
-    "favicon": "/logo/favicon.png",
+    "logo": "/assets/icon.png",
+    "favicon": "/assets/favicon.png",
     "navigation": {
         "groups": [
             {

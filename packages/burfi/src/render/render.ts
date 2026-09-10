@@ -12,7 +12,7 @@ export function renderTemplate(template: any, context: any) {
     })
 }
 
-export function parseGobhi(source: string) {
+export function parseBurfi(source: string) {
     const serverMatch = source.match(/<server>([\s\S]*?)<\/server>/);
     const serverCode = serverMatch?.[1] ?? ""
     const template = source.replace(/<server>[\s\S]*?<\/server>/, "")
@@ -23,10 +23,10 @@ export function parseGobhi(source: string) {
     }
 }
 
-export async function renderGobhiFile(filePath: string, request: any, params: any): Promise<string> {
+export async function renderBurfiFile(filePath: string, request: any, params: any): Promise<string> {
     const source = await Bun.file(filePath).text()
 
-    const { serverCode, template } = parseGobhi(source)
+    const { serverCode, template } = parseBurfi(source)
 
     const context = await executeServerCode(
         serverCode,

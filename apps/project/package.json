@@ -1,9 +1,9 @@
 {
   "name": "project",
   "scripts": {
-    "dev": "gobhi dev"
+    "dev": "burfi dev"
   },
   "dependencies": {
-    "gobhi": "file:..\\..\\packages\\gobhi\\gobhi-0.1.0-beta.2.tgz"
+    "burfi": "file:..\\..\\packages\\burfi\\burfi-0.1.0-beta.1.tgz"
   }
 }

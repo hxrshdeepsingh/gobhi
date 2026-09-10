@@ -3,15 +3,15 @@
 const command = process.argv[2];
 
 if (command === "dev") {
-  console.log("Starting Gobhi development server...");
+  console.log("Starting Burfi development server...");
 
   // await import("../server.ts")
   await import("../server.js");
 } else {
   console.log(`
-Gobhi CLI
+Burfi CLI
 
 Commands:
-  gobhi dev
+  burfi dev
 `);
 }

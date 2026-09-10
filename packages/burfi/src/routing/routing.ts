@@ -5,12 +5,12 @@ let routes: any;
 const pattern = /\[\s*(.*?)\s*\]/;
 
 export async function generateRoutes() {
-    const glob = new Glob("**/*.gobhi");
+    const glob = new Glob("**/*.burfi");
 
     const routes = [];
 
     for await (const file of glob.scan({ cwd: "./src/pages" })) {
-        const name = file.replace("index.gobhi", "");
+        const name = file.replace("index.burfi", "");
 
         routes.push({
             name: name,
@@ -36,13 +36,13 @@ export async function generateRoutes() {
         if (route.name === "") route.name = "/";
     })
 
-    await Bun.write(".gobhi/routes.manifest.json", JSON.stringify(routes, null, 2))
+    await Bun.write(".burfi/routes.manifest.json", JSON.stringify(routes, null, 2))
 
     return routes;
 }
 
 export async function loadRoutes() {
-    const file = Bun.file("./.gobhi/routes.manifest.json");
+    const file = Bun.file("./.burfi/routes.manifest.json");
     routes = await file.json();
     return routes;
 }
@@ -65,7 +65,7 @@ export async function getRouteFile(pathname: string) {
     }
 
     return {
-        path: "./src/pages/404/index.gobhi",
+        path: "./src/pages/404/index.burfi",
         params: {}
     };
 }

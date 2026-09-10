@@ -1,4 +1,4 @@
-import { BunRuntime } from "gobhi"
+import { BunRuntime } from "burfi"
 
 export default {
     runtime: BunRuntime,

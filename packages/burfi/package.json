@@ -1,9 +1,9 @@
 {
-  "name": "gobhi",
-  "version": "0.1.0-beta.2",
+  "name": "burfi",
+  "version": "0.1.0-beta.1",
   "type": "module",
   "bin": {
-    "gobhi": "dist/cli/index.js"
+    "burfi": "dist/cli/index.js"
   },
   "scripts": {
     "dev": "bun --watch ./src/server.js",
