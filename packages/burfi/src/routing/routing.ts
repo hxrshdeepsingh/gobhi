@@ -1,15 +1,16 @@
-import { Glob } from "bun";
+import { glob } from 'tinyglobby';
 import { match } from 'path-to-regexp';
+import { runtime } from "../server";
 
 let routes: any;
 const pattern = /\[\s*(.*?)\s*\]/;
 
 export async function generateRoutes() {
-    const glob = new Glob("**/*.burfi");
+    const files = await glob("**/*.burfi", { cwd: "./src/pages" })
 
     const routes = [];
 
-    for await (const file of glob.scan({ cwd: "./src/pages" })) {
+    for await (const file of files) {
         const name = file.replace("index.burfi", "");
 
         routes.push({
@@ -36,14 +37,13 @@ export async function generateRoutes() {
         if (route.name === "") route.name = "/";
     })
 
-    await Bun.write(".burfi/routes.manifest.json", JSON.stringify(routes, null, 2))
-
+    await runtime.writeFile(".burfi/routes.manifest.json", JSON.stringify(routes, null, 2))
     return routes;
 }
 
 export async function loadRoutes() {
-    const file = Bun.file("./.burfi/routes.manifest.json");
-    routes = await file.json();
+    const file = await runtime.readFile("./.burfi/routes.manifest.json");
+    routes = JSON.parse(file)
     return routes;
 }
 

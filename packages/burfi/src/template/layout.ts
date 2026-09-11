@@ -1,5 +1,6 @@
+import { runtime } from "../server";
+
 export async function layoutWrapper(html: string) {
-    const layout = Bun.file("./src/pages/layout.html");
-    const layoutHtml = await layout.text();
-    return layoutHtml.replace("{{children}}", html);
+    const layout = await runtime.readFile("./src/pages/layout.html");
+    return layout.replace("{{children}}", html);
 }

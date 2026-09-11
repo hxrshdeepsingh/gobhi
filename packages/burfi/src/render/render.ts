@@ -1,4 +1,5 @@
 import { executeServerCode } from "../execute"
+import { runtime } from "../server"
 
 export function renderTemplate(template: any, context: any) {
     return template.replace(/\{([a-zA-Z_$][\w$]*)\}/g, (match: any, key: any) => {
@@ -24,7 +25,7 @@ export function parseBurfi(source: string) {
 }
 
 export async function renderBurfiFile(filePath: string, request: any, params: any): Promise<string> {
-    const source = await Bun.file(filePath).text()
+    const source = await runtime.readFile(filePath);
 
     const { serverCode, template } = parseBurfi(source)
 

@@ -1,0 +1,27 @@
+{
+    "name": "@hxrshdeep-singh/burfi",
+    "version": "0.1.0-beta.2",
+    "type": "module",
+    "bin": {
+        "burfi": "dist/cli/index.js"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "prepublishOnly": "pnpm build"
+    },
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "alpinejs": "^3.17.0",
+        "htmx.org": "^2.0.10",
+        "path-to-regexp": "^8.4.2"
+    },
+    "devDependencies": {
+        "@types/bun": "^1.4.0",
+        "typescript": "^7.0.2"
+    }
+}

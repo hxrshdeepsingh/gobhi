@@ -1,6 +1,6 @@
-import { BunRuntime } from "burfi"
+import { NodeRuntime } from "@hxrshdeep-singh/burfi"
 
 export default {
-    runtime: BunRuntime,
-    port: 3000
+    runtime: NodeRuntime,
+    port: 3002
 }

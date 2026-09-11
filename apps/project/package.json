@@ -2,5 +2,8 @@
   "name": "project",
   "scripts": {
     "dev": "burfi dev"
+  },
+  "dependencies": {
+    "@hxrshdeep-singh/burfi": "workspace:*"
   }
 }

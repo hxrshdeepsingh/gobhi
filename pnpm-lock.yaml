@@ -207,13 +207,14 @@ importers:
 
   .: {}
 
-  apps/project: {}
+  apps/project:
+    dependencies:
+      '@hxrshdeep-singh/burfi':
+        specifier: workspace:*
+        version: link:../../packages/burfi
 
   packages/burfi:
     dependencies:
-      '@preact/signals-core':
-        specifier: ^1.14.4
-        version: 1.14.4
       alpinejs:
         specifier: ^3.17.0
         version: 3.17.2
@@ -223,18 +224,21 @@ importers:
       path-to-regexp:
         specifier: ^8.4.2
         version: 8.4.2
+      tinyglobby:
+        specifier: ^0.2.17
+        version: 0.2.17
     devDependencies:
       '@types/bun':
         specifier: ^1.4.0
         version: 1.4.2
+      '@types/node':
+        specifier: ^22.20.2
+        version: 22.20.2
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
 
 packages:
-
-  '@preact/signals-core@1.14.4':
-    resolution: {integrity: sha512-HNB6HYeYKhQbJ1aKl+YRjrS4+QWHLKX6qKoUsfS/m0vqzsVaEBiZiaKbG/e+NKk2ch5ALQr/ihWaMHxiCuuWHA==}
 
   '@types/bun@1.4.2':
     resolution: {integrity: sha512-GimotNn7+ZV0uVArItBbriZsR1oNf0+WTzPkdcFrzShI7k2norL0uzEaJT8T33dWr7O/c9ZDuAFQrctKCi72oQ==}
@@ -374,11 +378,28 @@ packages:
   bun-types@1.4.2:
     resolution: {integrity: sha512-bxV1FgK7yBIzjRe5zBozIM4Bem11ZJcCXSrjWRG3YWLt8yFDePu4cLjpebO8OvPeIE9trbyPF4fuj3Cia4Fj3w==}
 
+  fdir@6.5.0:
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   htmx.org@2.0.10:
     resolution: {integrity: sha512-kdeJe7ZVwaS6QMz/ebBIVtZdpwen6L0OQ5GOhPV9MKBb196TCZeZu4yA7ZIQsaLKv7EpXz+So7KSXNuHXhj7Cw==}
 
   path-to-regexp@8.4.2:
     resolution: {integrity: sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA==}
+
+  picomatch@4.0.7:
+    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
+    engines: {node: '>=12'}
+
+  tinyglobby@0.2.17:
+    resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
+    engines: {node: '>=12.0.0'}
 
   typescript@7.0.2:
     resolution: {integrity: sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==}
@@ -389,8 +410,6 @@ packages:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
 snapshots:
-
-  '@preact/signals-core@1.14.4': {}
 
   '@types/bun@1.4.2':
     dependencies:
@@ -474,9 +493,20 @@ snapshots:
     dependencies:
       '@types/node': 22.20.2
 
+  fdir@6.5.0(picomatch@4.0.7):
+    optionalDependencies:
+      picomatch: 4.0.7
+
   htmx.org@2.0.10: {}
 
   path-to-regexp@8.4.2: {}
+
+  picomatch@4.0.7: {}
+
+  tinyglobby@0.2.17:
+    dependencies:
+      fdir: 6.5.0(picomatch@4.0.7)
+      picomatch: 4.0.7
 
   typescript@7.0.2:
     optionalDependencies:

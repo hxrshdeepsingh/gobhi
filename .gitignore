@@ -6,6 +6,8 @@ node_modules
 .env.*
 !.env.example
 
+.burfi
+
 # Build output
 dist/
 build/

@@ -1,3 +1,5 @@
 packages:
   - "packages/*"
   - "apps/*"
+minimumReleaseAgeExclude:
+  - '@hxrshdeep-singh/burfi@0.1.0-beta.1'

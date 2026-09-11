@@ -1,29 +1,29 @@
 {
   "name": "@hxrshdeep-singh/burfi",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "type": "module",
   "bin": {
-    "burfi": "dist/cli/index.js"
+    "burfi": "src/cli/index.ts"
   },
   "scripts": {
-    "dev": "bun --watch ./src/server.js",
     "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "pnpm build"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./src/index.ts"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "dependencies": {
-    "@preact/signals-core": "^1.14.4",
     "alpinejs": "^3.17.0",
     "htmx.org": "^2.0.10",
-    "path-to-regexp": "^8.4.2"
+    "path-to-regexp": "^8.4.2",
+    "tinyglobby": "^0.2.17"
   },
   "devDependencies": {
     "@types/bun": "^1.4.0",
+    "@types/node": "^22.20.2",
     "typescript": "^7.0.2"
   }
 }

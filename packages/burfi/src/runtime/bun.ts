@@ -1,4 +1,7 @@
-export const BunRuntime = {
+import type { Runtime } from "../../types/runtime"
+import { bunHandler } from "./handler/bunHandler"
+
+export const BunRuntime: Runtime = {
     name: "bun",
 
     async readFile(path: string): Promise<string> {
@@ -17,10 +20,7 @@ export const BunRuntime = {
         return import(path)
     },
 
-    async listen(port: number, handler: any) {
-        return Bun.serve({
-            port,
-            fetch: handler,
-        })
+    listen(port: number, handler: (request: Request) => Promise<Response>) {
+        return bunHandler(port, handler)
     }
 }
